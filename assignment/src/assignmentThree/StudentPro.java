@@ -1,6 +1,6 @@
 package assignmentThree;
 
-public class StudentPro {
+public class StudentPro{
 	private int id;
 
 	private String fname;

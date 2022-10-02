@@ -1,22 +1,25 @@
 package assignmentThree;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Rearrangement {
 	public static void main(String []args) {
 		Scanner sc=new Scanner(System.in);
+		ArrayList<StudentPro> l=new ArrayList<StudentPro>();
 		int numstud=sc.nextInt();
-		int id[]=new int[numstud];
-		String name[]=new String[numstud];
-		double cgpa[]=new double[numstud];
+		
 		for(int i=0;i<numstud;i++) {
-			id[i]=sc.nextInt();
-			name[i]=sc.next();
-			cgpa[i]=sc.nextDouble();
+			l.add(new StudentPro(sc.nextInt(),sc.next(),sc.nextDouble()));
 		}
-		for(int i=0;i<numstud;i++) {
-			StudentPro sp=new StudentPro(id[i]);
+		
+		Collections.sort(l,new compst());
+		
+		for(StudentPro sd:l) {
+			System.out.println(sd.getId()+" "+sd.getFname()+" "+sd.getCgpa());
 		}
+		
 	}
 
 }
